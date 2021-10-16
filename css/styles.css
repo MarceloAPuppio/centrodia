@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*::after, *::before{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    width: 8rem;
+}
+.logo-img{
+    height: 40px;
+    max-width: auto;
+    padding-right:0.5rem ;
+}
+.logo-description{
+    /* font-size: 1.2rem; */
+}
+.nav{
+}
+.nav__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+}
+.nav__item{
+    margin: 0 1.5rem;
+
+}
+.socialMedia{
+    display: flex;
+    width: 6rem;
+    align-items: center;
+justify-content: space-around;
+}
+.socialMedia span{
+    cursor: pointer;
+}
