@@ -7,30 +7,53 @@
     margin: 0;
     padding: 0;
 }
+:root{
+    --mainColor: #49c5b0;
+    --maiLightColor: #8de6d7;
+    --secondaryColor:#4960d1;
+    --acentColor:#3fa636;
+    --text:whitesmoke;
+    --darkText:rgb(32, 32, 32);
+}
 html{
     font-size: 16px;
     scroll-behavior: smooth;
 }
 body{
     font-family: 'Roboto', sans-serif;
+    color: --var(--darkText);
 }
 .header{
-    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
+    background: linear-gradient(45deg, var(--mainColor) 40%, var(--maiLightColor) 80%,  #8de6d7a9);
 }
 .logo{
     display: flex;
     align-items: center;
-    width: 8rem;
+    justify-content: center;
+    min-width: 6.5rem;
 }
-.logo-img{
-    height: 40px;
-    max-width: auto;
-    padding-right:0.5rem ;
+
+svg{
+    max-height: 4rem;
+    max-width: 4rem;
+    transform: scale(0.8);
+
 }
+.pathLogo{
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+    fill:var(--secondaryColor);
+    width: 100%; 
+    height: auto;
+    filter:drop-shadow(0.2rem 0.2rem 1px #050505)
+
+}
+
 .logo-description{
-    /* font-size: 1.2rem; */
+    font-size: 1.1rem;
+    color: whitesmoke;
 }
 .nav{
 }
@@ -53,4 +76,14 @@ justify-content: space-around;
 }
 .socialMedia span{
     cursor: pointer;
+}
+/* galeria */
+
+.galery{
+    width: 400px;
+    height: 300px;
+    background-image: url('../images/carrousel/1.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 1.5s linear;
 }
