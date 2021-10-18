@@ -7,6 +7,12 @@
     margin: 0;
     padding: 0;
 }
+*::-webkit-scrollbar {
+    display: none;
+}
+ul{
+    list-style: none;
+}
 :root{
     --mainColor: #49c5b0;
     --maiLightColor: #8de6d7;
@@ -22,11 +28,25 @@ html{
 body{
     font-family: 'Roboto', sans-serif;
     color: --var(--darkText);
+    
 }
 .header{
+    position: fixed;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(45deg, var(--mainColor) 40%, var(--maiLightColor) 80%,  #8de6d7a9);
+    width: 100vw;
+    color: var(--darkText);
+    background: rgba(255, 255, 255, 0.295);
+    backdrop-filter: blur(0.1rem);
+    /* background: linear-gradient(45deg, var(--mainColor) 40%, var(--maiLightColor) 80%,  #8de6d7a9); */
+}
+.divisor{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 1px;
+    background:var(--text);
 }
 .logo{
     display: flex;
@@ -44,7 +64,7 @@ svg{
 .pathLogo{
     fill-rule:evenodd;
     clip-rule:evenodd;
-    fill:var(--secondaryColor);
+    fill:var(--mainColor);
     width: 100%; 
     height: auto;
     filter:drop-shadow(0.2rem 0.2rem 1px #050505)
@@ -53,7 +73,7 @@ svg{
 
 .logo-description{
     font-size: 1.1rem;
-    color: whitesmoke;
+    color: var(--darkText)
 }
 .nav{
 }
@@ -79,11 +99,69 @@ justify-content: space-around;
 }
 /* galeria */
 
+main{
+    min-height: 100vh;
+    width: 100vw;
+}
+section{
+    height: 100vh;
+    width: 100%;
+}
 .galery{
-    width: 400px;
-    height: 300px;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
     background-image: url('../images/carrousel/1.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     transition: background 1.5s linear;
+    z-index: 1;
 }
+.galery__controls{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s linear;
+}
+.galery:hover .galery__controls {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.back{
+    width: 0.9rem;
+    height: 0.9rem;
+    background: red;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.dotList{
+    position: absolute;
+    top: 90%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+}
+.dotItem{
+    width: 0.9rem;
+    height: 0.9rem;
+    background: rgba(255, 254, 254, 0.342);
+    backdrop-filter: blur(0.1rem);
+    border-radius: 50%;
+    border: whitesmoke solid 2px;
+    margin-right: 2rem;
+}
+/* <div class="galery__controls">
+<ul class="dotList">
+    <li class="dotItem"></li>                        
+</ul>
+</div> */
