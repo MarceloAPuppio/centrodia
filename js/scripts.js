@@ -6,6 +6,16 @@ let arregloFotos = [
   "url('images/carrousel/3.webp')",
   "url('images/carrousel/4.webp')",
 ];
-const galery = document.querySelector(".galery");
-let clousure = slider(5000, galery, arregloFotos);
-clousure();
+const GALERY = document.querySelector(".galery");
+const BACK = document.querySelector(".back");
+const NEXT = document.querySelector(".next");
+
+let { changePicture, nextPicture, backPicture } = slider(
+  8000,
+  GALERY,
+  arregloFotos
+);
+NEXT.addEventListener("click", nextPicture);
+BACK.addEventListener("click", backPicture);
+
+changePicture();
