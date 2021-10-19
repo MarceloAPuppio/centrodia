@@ -19,3 +19,17 @@ NEXT.addEventListener("click", nextPicture);
 BACK.addEventListener("click", backPicture);
 
 changePicture();
+
+// Trabajar sobre esto
+// window.addEventListener("scroll", function () {
+//   if (
+//     window.scrollY > window.innerHeight ||
+//     window.scrollY > document.documentElement.clientHeight ||
+//     window.scrollY > document.body.clientHeight
+//   ) {
+//     document.querySelector(".header").classList.add("headerActive");
+//   } else {
+//     //remove the background property so it comes transparent again (defined in your css)
+//     document.querySelector(".header").classList.remove("headerActive");
+//   }
+// });
