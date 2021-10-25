@@ -19,7 +19,11 @@ ul{
     --secondaryColor:#4960d1;
     --acentColor:#3fa636;
     --text:whitesmoke;
-    --darkText:rgb(32, 32, 32);
+    --darkText:rgb(44, 44, 44);
+    --darkLightText:rgb(80, 80, 80);
+    --darkShadow: rgba(0, 0, 0, 0.11);
+    --header-height:4rem;
+
 }
 html{
     font-size: 16px;
@@ -27,12 +31,13 @@ html{
 }
 body{
     font-family: 'Roboto', sans-serif;
-    color: --var(--darkText);
+    color: var(--darkText);
     /* background: linear-gradient(45deg, var(--mainColor) 40%, var(--maiLightColor) 80%,  #8de6d7a9); */
     background: var(--text);
 }
 .header{
     position: fixed;
+    height: var(--header-height);
     z-index: 5;
     display: flex;
     justify-content: space-between;
@@ -244,7 +249,87 @@ overflow: hidden;
     <li class="dotItem"></li>                        
 </ul>
 </div> */
+
+/*
+<div class="equipoCardsContainer">
+                <div class="card">
+                    <div class="cardHeader">
+                        <img src="https://source.unsplash.com/random/100x100?123" alt="">
+                    </div>
+                    <div class="cardDescription"></div>
+                    <div class="cardFooter"></div>
+                </div>
+*/
 .equipo{
+    padding-top: var(--header-height);
     position: relative;
-    font-size: 7rem;
+    font-size: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+}
+.equipoCardsContainer{
+    width: 80%;
+    padding: 5rem 2rem 0 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 .5rem 0.2rem var(--darkShadow);
+}
+
+.card{
+    transition: transform .1s ease-in-out;
+    height: 20rem;
+    width: 15rem;
+    background: var(--text);
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    border-radius: 0.3rem;
+}
+.cardHeader{
+    height: 70%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.card-image{
+    height: 90%;
+    max-width:auto;
+    border-radius: 0.2rem;
+}
+.cardDescription{
+    padding: 0.3rem 10%;
+}
+.cardDescription h4{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.cardDescription h6{
+    font-size: 0.8rem;
+    color: var(--darkLightText);
+}
+.cardFooter{
+    display: flex;
+    gap: 0.45rem;
+    padding: 0.5rem 10%;
+    font-size: 0.9rem;
+    font-weight: lighter;
+
+}
+.socialmediacontainer{
+    height: 1.5rem;
+    width: 1.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background:var(--darkShadow)
 }
